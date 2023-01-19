@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+ No cool and state-of-the-art JS language features were added. I think the code just needed to be rearranged. There were some unnecesary and confusing if clauses. I also moved the function definition up - just for readability.
+ 
+ This version is more readable because we are avoiding if clauses nesting and unnecesary else statements.
+ 
+ No comments are needed to understand the code. With just reading the test cases and the dpk.js code, any developer would be able to understand the code and make changes - if needed.
