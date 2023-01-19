@@ -21,4 +21,10 @@ describe("deterministicPartitionKey", () => {
     const trivialKey = deterministicPartitionKey({partitionKey: 'aasd'});
     expect(trivialKey).toBe("aasd");
   });
+
+  it("Returns the correspondant hash when MAX_PARTITION_KEY_LENGTH is exeeded", () => {
+    const STRING_300_CHARS = 'zmnujcbujpodnjojiazbfnzodghfbghgndrrlwwkeexpholnpbsjzcvfgcplyotzfttmfuwtmenxexlebislxaegkrkdhuogsivhgfwyqfjqxijkdbpmonaeseklyfopardfpwmqzadlypfhzntcbfezkicikbqwojvblxkppyqlqmkhyhxyxvkbciibyprceklfceoptomqsgexqpqqjagntqsnktobnjmdcgeulkftrvnukzaqmsywdpcrsydpbmpvnuzgukkulntyzahhzyjfwsdnbavjbqaqmbriwgcs'
+    const trivialKey = deterministicPartitionKey(STRING_300_CHARS);
+    expect(trivialKey).toBe("56130fe03801e159a3f4e9ce72a83e20ff75ebf1504c9a19cd2b8f9367bd890f2646c49bed4c9fe0b4d7f3feab72a5247caa3c52fba1a9631a486b3bbaeb935b");
+  });
 });
